@@ -1,0 +1,25 @@
+<input id="email" type="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<a href="./registration.html">Registration</a>
+
+<script>
+    function login() {
+        let data = {
+            email: document.getElementById('email').value,
+            password: document.getElementById('email').value
+        }
+        fetch('/user/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+            })
+            .catch(console.error)
+    }
+
+</script>

@@ -6,5 +6,7 @@ export const client = new MongoClient(MONGO_URI, {
   useUnifiedTopology: true,
 });
 
+// await client.connect()
+
 export const db = client.db(MONGO_DATABASE_NAME);
 export const USER = db.collection("user");
